@@ -8,7 +8,11 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int [] array = readIntegers(5);
+        System.out.println("Enter how many numbers: ");
+        int count = scanner.nextInt();
+        scanner.nextLine();
+
+        int [] array = readIntegers(count);
         System.out.println(Arrays.toString(array));
         System.out.println("Minimum value is : " + findMin(array));
     }
