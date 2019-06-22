@@ -17,7 +17,7 @@ public class MobilePhone {
         System.out.print("Enter contact number: ");
         String number = s.nextLine();
 
-        Contacts contact = new Contacts(name,number);
+        Contacts contact = Contacts.createContact(name,number);
 
         this.contactList.add(contact);
         System.out.println("- Successfully added " + contact.getName() + " with number " + contact.getNumber());
@@ -90,5 +90,10 @@ public class MobilePhone {
             }
         }
         return -1;
+
+    }
+
+    public int findContact(Contacts contacts){
+        return contactList.indexOf(contacts);
     }
 }

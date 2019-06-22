@@ -43,6 +43,9 @@ public class Main {
                     System.out.println("Quiting program");
                     quit = true;
                     break;
+                case 8:
+                    testSearch();
+
             }
         }
     }
@@ -78,5 +81,10 @@ public class Main {
 
     public static void searchContact(){
         myPhone.query();
+    }
+
+    public static void testSearch(){
+        Contacts contacts = Contacts.createContact("Ryan","09231838628");
+        System.out.println(myPhone.findContact(contacts));
     }
 }

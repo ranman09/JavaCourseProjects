@@ -1,0 +1,23 @@
+Bank.class
+- arraylist of Branches.class
++ new branch
++ new customer to a branch with initial amount
++ new transaction to a branch for existing customers
++ list of customer to a particular branch, plus option to list transactions
+Branches.lass
+- arraylist of Customers
++ new customer with initial amount
++ new transaction for existing customers
+Customer.class
+- arraylist of Transactions(Doubles)
+
+data validations!
+
+1. Add a new Branch
+2. Add customer to a branch
+3. Add customer transaction
+4. List all branches
+5. List branch customers
+6. List customer transactions
+7. Display selection
+8. Quit
