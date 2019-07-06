@@ -172,13 +172,12 @@ public class Main {
                     case 5:
                         //remove current song from playlist
                         if (playlist.size() > 0){
+                            i.remove();
+                            System.out.println("Removed current song in the play list");
+
                             if (i.hasNext()){
-                                i.remove();
-                                System.out.println("Removed current song in the play list");
                                 System.out.println("Now playing " + i.next());
                             } else if (i.hasPrevious()){
-                                i.remove();
-                                System.out.println("Removed current song in the play list");
                                 System.out.println("Now playing " + i.previous());
                             }
                         } else {
