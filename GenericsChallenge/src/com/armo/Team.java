@@ -2,7 +2,7 @@ package com.armo;
 
 import java.util.ArrayList;
 
-public class Team<T extends Sport>{
+public class Team<T extends Sport> implements Comparable<Team<T>>{
 
     private String name;
     private int wins;
@@ -57,25 +57,40 @@ public class Team<T extends Sport>{
     }
 
     public void matchWith(Team<T> opponentTeam, int ourScore, int theirScore){
+        String message;
+
         if(ourScore > theirScore){
             this.wins++;
+            message = " Wins ";
         } else if (theirScore > ourScore){
             loses++;
+            message = " Loss ";
         } else {
             draws++;
+            message = " Draws ";
         }
         plays++;
+
         if(opponentTeam != null) {
             opponentTeam.matchWith(null, theirScore, ourScore);
+            System.out.println(this.name + message + " in the match with " + opponentTeam.getName());
         }
+
+
     }
 
+    public int ranking(){
+        return (this.wins * 2) + draws;
+    }
 
-
-
-
-
-
-
-
+    @Override
+    public int compareTo(Team<T> o) {
+        if(this.ranking() > o.ranking()){
+            return -1;
+        } else if (this.ranking() < o.ranking()){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }

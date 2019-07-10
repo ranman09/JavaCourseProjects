@@ -1,8 +1,9 @@
 package com.armo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class League<T extends Sport>{
+public class League<T extends Team>{
     private String name;
     private ArrayList<T> team;
 
@@ -26,6 +27,15 @@ public class League<T extends Sport>{
             System.out.println(team.getName() + " Team");
         }
     }
+
+    public void printRanking(){
+        Collections.sort(team);
+        for(T t: team){
+            System.out.println(t.ranking() + " " + t.getName());
+        }
+    }
+
+
 
 
 
